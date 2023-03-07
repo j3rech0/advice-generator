@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/advice-generator-app-using-astro-and-react-integration-BSxPo4KKYB](https://www.frontendmentor.io/solutions/advice-generator-app-using-astro-and-react-integration-BSxPo4KKYB)
+- Live Site URL: [https://advice-generator-jet-theta.vercel.app/](https://advice-generator-jet-theta.vercel.app/)
 
 ## My process
 
