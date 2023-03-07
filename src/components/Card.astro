@@ -1,0 +1,68 @@
+---
+import Advice from "./Advice";
+---
+
+<article class="card">
+  <Advice client:load />
+</article>
+
+<style lang="scss">
+  @import "../styles/mixin.scss";
+  :global(button.dice-loading) {
+    --disableBtn: none;
+    animation: breath 1s forwards;
+  }
+  :global(button.dice-loading > span) {
+    background-position: 6px 6px, 16px 6px, 16px 16px, 6px 16px, center center;
+    background-size: 3px 3px, 3px 3px, 3px 3px, 3px 3px, 0 0;
+    animation: loading 1s infinite;
+  }
+
+  @keyframes loading {
+    0% {
+      background-position: center 6px, 16px 6px, center 16px, center center,
+        center center;
+      background-size: 3px 3px, 0px 0px, 3px 3px, 3px 3px, 0 0;
+    }
+
+    50% {
+      background-position: 16px center, 16px 6px, 6px center, center center,
+        center center;
+      background-size: 3px 3px, 0px 0px, 3px 3px, 0px 0px, 0 0;
+    }
+
+    70% {
+      background-position: center center, 16px 6px, center center, center center,
+        center center;
+      background-size: 3px 3px, 0px 0px, 0px 0px, 0px 0px, 0 0;
+    }
+
+    100% {
+      background-position: 6px 6px, 16px 6px, 16px 16px, 6px 16px, center center;
+      background-size: 3px 3px, 3px 3px, 3px 3px, 3px 3px, 0 0;
+    }
+  }
+  @keyframes breath {
+    from {
+      filter: drop-shadow(0px 0px 10px hsl(var(--neon-green)));
+    }
+    to {
+      filter: drop-shadow(0px 0px 20px hsl(var(--neon-green)));
+    }
+  }
+  .card {
+    background-color: hsl(var(--dark-grayish-blue));
+    margin: auto rem(35);
+    padding: rem(40) rem(20) rem(50);
+    border-radius: rem(10);
+    text-align: center;
+    position: relative;
+    min-width: rem(320);
+    max-width: rem(540);
+    box-shadow: 21px 30px 50px -9px hsla(0,0,0, .1);
+    @include bp(768) {
+      margin: auto;
+      padding: rem(64) rem(40);
+    }
+  }
+</style>

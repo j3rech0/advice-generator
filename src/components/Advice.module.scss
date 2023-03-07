@@ -1,0 +1,129 @@
+@import "../styles/mixin.scss";
+
+.placeholderText {
+  color: hsl(var(--neon-green));
+  font-size: rem(12);
+}
+.title {
+  color: hsl(var(--neon-green));
+  text-transform: uppercase;
+  font-size: rem(11);
+  letter-spacing: 4px;
+  display: block;
+  @include bp(768) {
+    font-size: rem(13);
+  }
+}
+.text {
+  color: hsl(var(--light-cyan));
+  font-size: rem(22);
+  line-height: 1.5;
+  @include bp(768) {
+    font-size: rem(26);
+  }
+}
+.separator {
+  --leftAdjust: -9px;
+  --rightAdjust: -17px;
+  --zeroValue: 0;
+  --size: 20px;
+  width: 100%;
+  border: 0 none;
+  height: var(--size);
+  background-image: linear-gradient(
+      hsl(var(--grayish-blue)) 0%,
+      hsl(var(--grayish-blue)) 100%
+    ),
+    linear-gradient(hsl(var(--grayish-blue)) 0%, hsl(var(--grayish-blue)) 100%);
+  background-size: 43% 1px, 43% 1px;
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+  position: relative;
+  &::after,
+  &::before {
+    --size: 15px;
+    content: "";
+    position: absolute;
+    background-color: hsl(var(--light-cyan));
+    border-radius: 10px;
+    height: var(--size);
+    width: 6px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  &::before {
+    left: -9px;
+    right: var(--zeroValue);
+  }
+  &::after {
+    right: var(--rightAdjust);
+    left: var(--zeroValue);
+  }
+}
+
+.dice {
+  --size: 65px;
+  --pull: -32px;
+  --disableBtn: inherit;
+  cursor: pointer;
+  background: hsl(var(--neon-green));
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--pull);
+  width: var(--size);
+  height: var(--size);
+  transition: 200ms ease-in-out;
+  pointer-events: var(--disableBtn);
+  &:hover {
+    filter: drop-shadow(0px 0px 20px hsl(var(--neon-green)));
+    box-shadow: 0 0 10px 4px hsl(var(--neon-green));
+  }
+  > span {
+    --size: 25px;
+    --radius: 3px;
+    color: transparent;
+    background: hsl(var(--dark-blue));
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--radius);
+    display: block;
+    transition: 250ms ease-in-out;
+    background-image: radial-gradient(
+        50% 50% at 50% 50%,
+        hsl(var(--neon-green)) 90%,
+        transparent 100%
+      ),
+      radial-gradient(
+        50% 50% at 50% 50%,
+        hsl(var(--neon-green)) 90%,
+        transparent 100%
+      ),
+      radial-gradient(
+        50% 50% at 50% 50%,
+        hsl(var(--neon-green)) 90%,
+        transparent 100%
+      ),
+      radial-gradient(
+        50% 50% at 50% 50%,
+        hsl(var(--neon-green)) 90%,
+        transparent 100%
+      ),
+      radial-gradient(
+        50% 50% at 50% 50%,
+        hsl(var(--neon-green)) 90%,
+        transparent 100%
+      );
+
+    background-repeat: no-repeat;
+    background-size: 3px 3px;
+    background-position: 6px 6px, 16px 6px, 16px 16px, 6px 16px, center center;
+  }
+}
